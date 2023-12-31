@@ -27,30 +27,58 @@
 
       .title {
         font-size: 3em;
-        color: #ff6347; /* Червоний колір */
-        position: relative;
-        z-index: 2;
+        background: linear-gradient(45deg, #f9e505, #150ae6, #80477d);
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
+        animation: rainbow 5s infinite;
       }
 
-      .box-title {
+      .bright-text {
         font-size: 1.8em;
-        color: #4b0082; /* Фіолетовий колір */
+        color: #f16a0f; /* Жовтий колір */
+        margin-top: 10px;
+        background: linear-gradient(45deg, #f9e505, #150ae6, #80477d);
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
+        animation: rainbow 3s infinite;
+      }
+
+      .star-circle {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        animation: rotateStars 10s linear infinite;
       }
 
       .star {
         position: absolute;
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
         background-color: #f7d874;
         border-radius: 50%;
-        animation: twinkle 1s infinite;
+        animation: twinkle 1s infinite, rotateStar 3s infinite;
       }
 
       .snowflake {
+        font-size: 80px;
+        color: #00bfff;
+        animation: float 3s infinite, rotateSnowflake 5s infinite;
         position: absolute;
-        font-size: 30px;
-        color: #00bfff; /* Синій колір */
-        animation: float 5s infinite;
+      }
+
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       @keyframes twinkle {
@@ -72,20 +100,54 @@
           transform: translateY(-10px);
         }
       }
+
+      @keyframes rotateStar {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotateSnowflake {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotateStars {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
     <title>Новорічна відкритка</title>
   </head>
   <body>
     <div class="box">
       <h1 class="title">З Новим Роком!!!</h1>
-      <p class="box-title">
+      <p class="bright-text">
         Бажаємо Вам у цьому році безмежної радості, тепла та найбільших
         досягнень!
       </p>
-      <!-- Зірочки -->
-      <div class="star" style="top: 30px; left: 20px"></div>
-      <div class="star" style="top: 50px; left: 150px"></div>
-      <div class="star" style="top: 80px; left: 280px"></div>
+      <!-- Круг із зірочками -->
+      <div class="star-circle">
+        <div class="star" style="top: 10px; left: 50px"></div>
+        <div class="star" style="top: 30px; left: 120px"></div>
+        <div class="star" style="top: 60px; left: 190px"></div>
+        <div class="star" style="top: 90px; left: 260px"></div>
+        <div class="star" style="top: 120px; left: 330px"></div>
+        <div class="star" style="top: 150px; left: 400px"></div>
+        <div class="star" style="top: 180px; left: 470px"></div>
+        <div class="star" style="top: 210px; left: 540px"></div>
+      </div>
 
       <!-- Сніжинки -->
       <div class="snowflake" style="top: 100px; left: 50px">❄️</div>
